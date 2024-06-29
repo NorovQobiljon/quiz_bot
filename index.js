@@ -1,5 +1,9 @@
+const express = require('express')
+const app = express()
 const port = process.env.PORT || 4000;
-const TelegramBot = require('node-telegram-bot-api');
+
+app.get('/', (req, res) => {
+  const TelegramBot = require('node-telegram-bot-api');
 
 const token = '7363907617:AAHlNxW8P6M-wLYsvvRuOsY4yb9oGOjXQic';
 
@@ -84,6 +88,10 @@ bot.on('polling_error', (error) => {
 });
 
 console.log('Bot started successfully!');
+})
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
+
